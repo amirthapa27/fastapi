@@ -18,7 +18,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl='login')  # login endpoint
 # random long text
 SECRET_KEY = settings.secret_key
 ALGORITHM = settings. algorithm  # algorithm to be used
-ACCESS_TOKEN_EXPIRE_MINUTES = settings.access_token_epire_minutes  # token expire time
+ACCESS_TOKEN_EXPIRE_MINUTES = settings.access_token_expire_minutes  # token expire time
 
 # encoding
 
