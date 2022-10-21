@@ -1,24 +1,25 @@
-"""add the last columns
+"""add the reamining columns
 
-Revision ID: faa9bf595dc4
-Revises: a7d2dca1c718
-Create Date: 2022-10-20 11:37:02.605445
+Revision ID: 344e5bcd97b8
+Revises: 63ac0cd2c41f
+Create Date: 2022-10-21 15:53:17.738582
 
 """
 from alembic import op
+import alembic
 import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'faa9bf595dc4'
-down_revision = 'a7d2dca1c718'
+revision = '344e5bcd97b8'
+down_revision = '63ac0cd2c41f'
 branch_labels = None
 depends_on = None
 
 
 def upgrade() -> None:
     op.add_column('posts', sa.Column('published', sa.Boolean(),
-                  nullable=False, server_default='True')),
+                  nullable=False, server_default='True'))
     op.add_column('posts', sa.Column('created_at', sa.TIMESTAMP(
         timezone=True), nullable=False, server_default=sa.text('now()')))
     pass
