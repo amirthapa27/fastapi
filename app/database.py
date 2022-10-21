@@ -9,7 +9,7 @@ from app.config import settings
 
 
 # SQLALCHEMY_DATABSE_URL = 'postgressql://<username>:<password>@<ip-address/hostname>/<database_name>'
-SQLALCHEMY_DATABSE_URL = f'postgresql://{settings.database_username}:{settings.databse_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}'
+SQLALCHEMY_DATABSE_URL = f'postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}'
 
 # connnects sqlalchemy to pstgres database
 engine = create_engine(SQLALCHEMY_DATABSE_URL)
