@@ -6,15 +6,17 @@ on: [push, pull_request] #activates on this condition (push or pull on any branc
 
 jobs:  #set of steps that execute on the same runner
   job1: #name
+    environment:  #calling the environment secrets set on github
+      name: testing
     env: #env variables
-      DATABASE_HOSTNAME: localhost
-      DATABASE_PORT: 5434
-      DATABASE_PASSWORD: mypass
-      DATABASE_NAME: fastapi 
-      DATABASE_USERNAME: postgres
-      SECRET_KEY: 09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7
-      ALGORITHM: HS256
-      ACCESS_TOKEN_EXPIRE_MINUTES: 30
+      DATABASE_HOSTNAME: ${{DATABASE_HOSTNAME}}
+      DATABASE_PORT: ${{DATABASE_PORT}}
+      DATABASE_PASSWORD: ${{DATABASE_PASSWORD}}
+      DATABASE_NAME: ${{DATABASE_NAME}} 
+      DATABASE_USERNAME: ${{}DATABASE_USERNAME}
+      SECRET_KEY: ${{SECRET_KEY}}
+      ALGORITHM: ${{ALGORITHM}}
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${{ACCESS_TOKEN_EXPIRE_MINUTES}}
     runs-on: ubuntu-latest #defines which runner it will use
     steps:
       - name: pulling git repo #name of the action
