@@ -1,6 +1,8 @@
 from app.calculation import add, subtract, multiply, divide, BankAccount, InsufficentFunds
 import pytest
 
+from tests.conftest import SQLALCHEMY_DATABSE_URL
+
 
 @pytest.fixture
 def zero_bank_account():
@@ -18,6 +20,7 @@ def bank_account():
     (12, 4, 16)
 ])
 def test_add(num1, num2, expected):
+    raise Exception(SQLALCHEMY_DATABSE_URL)
     print("testing add function")
     assert add(num1, num2) == expected
 
