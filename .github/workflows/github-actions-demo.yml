@@ -38,9 +38,9 @@ jobs:  #set of steps that execute on the same runner
           --health-retries 5
     runs-on: ubuntu-latest #defines which runner it will use
     steps:
-    - name: Step 2 - GitHub Action if statement (true)
-      if:  env.DATABASE_PASSWORD == 'mypass'
-      run: echo "I know what the secret token is!"
+      - name: Step 2 - GitHub Action if statement (true)
+        if:  env.DATABASE_PASSWORD == 'mypass'
+        run: echo "I know what the secret token is!"
       - name: pulling git repo #name of the action
         uses: actions/checkout@v2 #actual command for the action
       - name: Install python 
