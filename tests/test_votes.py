@@ -9,10 +9,10 @@ def test_vote(tests_post, session, test_user):
     session.commit()
 
 
-def test_vote_on_post(authorized_client, tests_post):
+def test_vote_on_post(authorized_client, tests_post, test_vote):
     res = authorized_client.post(
-        "/vote/", json={'post_id': tests_post[3].id, 'dir': 1})
-    assert res.status_code == 404  # 201
+        "/vote/", json={"post_id": tests_post[1].id, "dir": 1})
+    assert res.status_code == 201
 
 
 def test_vote_twice_on_post(authorized_client, tests_post, test_vote):
