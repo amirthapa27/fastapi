@@ -9,14 +9,14 @@ jobs:  #set of steps that execute on the same runner
     environment:  #calling the environment secrets set on github
       name: testing
     env: #env variables
-      DATABASE_HOSTNAME: localhost #${{secrets.DATABASE_HOSTNAME}}
-      DATABASE_PORT: 5432 # ${{secrets.DATABASE_PORT}}
-      DATABASE_PASSWORD: mypass # ${{secrets.DATABASE_PASSWORD}}
-      DATABASE_NAME: fastapi # ${{secrets.DATABASE_NAME}} 
-      DATABASE_USERNAME: postgres # ${{secrets.DATABASE_USERNAME}}
-      SECRET_KEY: 09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7 #${{secrets.SECRET_KEY}}
-      ALGORITHM: HS256 #${{secrets.ALGORITHM}}
-      ACCESS_TOKEN_EXPIRE_MINUTES: 30 #${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
+      DATABASE_HOSTNAME: ${{secrets.DATABASE_HOSTNAME}}
+      DATABASE_PORT: {{secrets.DATABASE_PORT}}
+      DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
+      DATABASE_NAME: ${{secrets.DATABASE_NAME}} 
+      DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
+      SECRET_KEY: ${{secrets.SECRET_KEY}}
+      ALGORITHM: ${{secrets.ALGORITHM}}
+      ACCESS_TOKEN_EXPIRE_MINUTES: {{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
 
 # Service containers to run with `container-job`
     services:
@@ -39,16 +39,16 @@ jobs:  #set of steps that execute on the same runner
     runs-on: ubuntu-latest #defines which runner it will use
     steps:
       - name: Step 2 - GitHub Action if statement (true)
-        # if:  env.DATABASE_PASSWORD == 'mypass'
-        # run: echo "I know what the password token is!"
+        if:  env.DATABASE_PASSWORD == 'mypass'
+        run: echo "I know what the password token is!"
         # if:  env.DATABASE_HOSTNAME == 'localhost'
         # run: echo "I know what the hostname token is!"
         # if:  env.DATABASE_PORT == '5432'
         # run: echo "I know what the port token is!"
         # if:  env.DATABASE_NAME == 'fastapi'
         # run: echo "I know what the name token is!"
-        if:  env.DATABASE_USERNAME == 'postgres'
-        run: echo "I know what the username token is!"
+        # if:  env.DATABASE_USERNAME == 'postgres'
+        # run: echo "I know what the username token is!"
         # if:  env.SECRET_KEY == '09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7'
         # run: echo "I know what the secretkey token is!"
         # if:  env.ALGORITHM == 'HS256'
