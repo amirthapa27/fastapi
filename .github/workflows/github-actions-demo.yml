@@ -41,7 +41,7 @@ jobs:  #set of steps that execute on the same runner
       - name: Step 2 - GitHub Action if statement (true)
         # if:  env.DATABASE_PASSWORD == 'mypass'
         # run: echo "I know what the password token is!"
-        if:  env.DATABASE_HOSTNAME == 'localhost'
+        if:  env.DATABASE_HOSTNAME == 'localhost11'
         run: echo "I know what the hostname token is!"
         # if:  env.DATABASE_PORT == '5432'
         # run: echo "I know what the port token is!"
