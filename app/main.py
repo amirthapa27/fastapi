@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 print(settings.database_username)
 
-# models.Base.metadata.create_all(bind=engine)  # create all of our models
+# models.Base.metadata.create_all(bind=engine)  # create all of our tables
 app = FastAPI()
 
 # all of the domains that can talk to our api
@@ -29,7 +29,7 @@ app.include_router(vote.router)  # includes vote file from router folder
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Hello world"}
 
 
 # create a session once the rquest is done then close it

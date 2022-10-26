@@ -1,0 +1,14 @@
+name: Build and Deploy Code #just a name
+
+on: [push, pull_request] #activates on this condition (push or pull on any branch)
+  # push:
+  #   branches: ["main"]
+
+jobs:  #set of steps that execute on the same runner
+  job1: #name
+    runs-on: ubuntu latest #defines which runner it will use
+    steps:
+      - name: pulling git repo #name of the action
+        uses: actions/checkout@v3 #actual command for the action
+      - name: say hi to amir
+        run: echo "hello amir" 
