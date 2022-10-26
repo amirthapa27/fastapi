@@ -9,6 +9,6 @@ jobs:  #set of steps that execute on the same runner
     runs-on: ubuntu latest #defines which runner it will use
     steps:
       - name: pulling git repo #name of the action
-        uses: actions/checkout@v3 #actual command for the action
+      - uses: actions/checkout@v3 #actual command for the action
       - name: say hi to amir
-        run: echo "hello amir" 
+      -  run: echo "hello amir" 
