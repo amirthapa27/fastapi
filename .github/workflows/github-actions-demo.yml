@@ -49,10 +49,10 @@ jobs:  #set of steps that execute on the same runner
         # run: echo "I know what the name token is!"
         # if:  env.DATABASE_USERNAME == 'postgres'
         # run: echo "I know what the username token is!"
-        if:  env.SECRET_KEY == '09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7'
-        run: echo "I know what the secretkey token is!"
-        # if:  env.ALGORITHM == 'HS256'
-        # run: echo "I know what the algorithm token is!"
+        # if:  env.SECRET_KEY == '09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7'
+        # run: echo "I know what the secretkey token is!"
+        if:  env.ALGORITHM == 'HS256'
+        run: echo "I know what the algorithm token is!"
         # if:  env.ACCESS_TOKEN_EXPIRE_MINUTES == '30'
         # run: echo "I know what the expiry token is!"
         
