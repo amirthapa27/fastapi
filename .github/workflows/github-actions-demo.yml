@@ -43,7 +43,7 @@ jobs:  #set of steps that execute on the same runner
         # run: echo "I know what the password token is!"
         # if:  env.DATABASE_HOSTNAME == 'localhost'
         # run: echo "I know what the hostname token is!"
-        if:  env.DATABASE_PORT == '5432'
+        if:  env.DATABASE_PORT == '5434'
         run: echo "I know what the port token is!"
         # if:  env.DATABASE_NAME == 'fastapi'
         # run: echo "I know what the name token is!"
