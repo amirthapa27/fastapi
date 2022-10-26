@@ -20,7 +20,6 @@ def bank_account():
     (12, 4, 16)
 ])
 def test_add(num1, num2, expected):
-    assert SQLALCHEMY_DATABSE_URL == "amit"
     print("testing add function")
     assert add(num1, num2) == expected
 
