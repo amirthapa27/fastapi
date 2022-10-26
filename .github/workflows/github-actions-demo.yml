@@ -17,4 +17,4 @@ jobs:  #set of steps that execute on the same runner
       - name: update pip
         run: python -m pip install --upgrade pip
       - name: install all dependencies
-        run: pip install -r requirement.txt
+        run: pip install -r requirements.txt
