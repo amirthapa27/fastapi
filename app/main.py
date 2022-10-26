@@ -29,7 +29,7 @@ app.include_router(vote.router)  # includes vote file from router folder
 
 @app.get("/")
 async def root():
-    return {"message": "Hello world"}
+    return {"message": "Hello world successfully deployed."}
 
 
 # create a session once the rquest is done then close it
