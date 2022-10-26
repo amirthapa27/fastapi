@@ -22,6 +22,7 @@ def vote(vote: schemas.Vote, db: Session = Depends(database.get_db), current_use
                                               vote.post_id, models.Vote.user_id == current_user.id)
     found_vote = vote_query.first()
     if (vote.dir == 1):
+
         if found_vote:  # checking if vote already exists
             raise HTTPException(status_code=status.HTTP_409_CONFLICT,
                                 detail=f"user {current_user.id} has already voted on the post {vote.post_id}")
