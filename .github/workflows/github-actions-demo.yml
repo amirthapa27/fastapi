@@ -14,9 +14,9 @@ jobs:  #set of steps that execute on the same runner
       DATABASE_PASSWORD: mypass # ${{secrets.DATABASE_PASSWORD}}
       DATABASE_NAME: fastapi # ${{secrets.DATABASE_NAME}} 
       DATABASE_USERNAME: postgres # ${{secrets.DATABASE_USERNAME}}
-      SECRET_KEY: ${{secrets.SECRET_KEY}}
-      ALGORITHM: ${{secrets.ALGORITHM}}
-      ACCESS_TOKEN_EXPIRE_MINUTES: ${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
+      SECRET_KEY: HS256 #${{secrets.SECRET_KEY}}
+      ALGORITHM: 09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7 #${{secrets.ALGORITHM}}
+      ACCESS_TOKEN_EXPIRE_MINUTES: 30 #${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
 
 # Service containers to run with `container-job`
     services:
